@@ -10,12 +10,12 @@ export interface DataFrame {
 }
 
 export interface ChartConfig {
-  type: "vega-lite" | "echarts";
+  type: "vega-lite" | "echarts" | "plotly";
   config: any; // This will be more specific based on the chart type
 }
 
 export interface ChartOptions {
-  preferredLibrary?: "vega-lite" | "echarts";
+  preferredLibrary?: "vega-lite" | "echarts" | "plotly";
   chartTypes?: string[];
   maxCharts?: number;
 }

@@ -1,7 +1,7 @@
 {
-  "name": "chartpilot",
+  "name": "chart-pilot",
   "version": "0.1.0",
-  "description": "A library for generating chart configurations from dataframes",
+  "description": "A library for generating chart configurations from dataframes.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
@@ -14,14 +14,23 @@
     "test": "playwright test",
     "lint": "eslint src --ext .ts",
     "prepare": "npm run build",
-    "prepublishOnly": "npm test && npm run lint",
-    "preversion": "npm run lint"
+    "prepublishOnly": "npm test",
+    "preversion": "npm run lint",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build",
+    "version:patch": "npm version patch",
+    "version:minor": "npm version minor",
+    "version:major": "npm version major",
+    "publish:patch": "npm run version:patch && npm publish",
+    "publish:minor": "npm run version:minor && npm publish",
+    "publish:major": "npm run version:major && npm publish"
   },
   "keywords": [
     "charts",
     "visualization",
     "vega-lite",
     "echarts",
+    "plotly",
     "dataframe"
   ],
   "author": "",
@@ -36,15 +45,31 @@
   "homepage": "https://github.com/yourusername/chartpilot#readme",
   "devDependencies": {
     "@playwright/test": "^1.42.1",
+    "@storybook/addon-essentials": "^8.0.0",
+    "@storybook/addon-interactions": "^8.0.0",
+    "@storybook/addon-links": "^8.0.0",
+    "@storybook/blocks": "^8.0.0",
+    "@storybook/react": "^8.0.0",
+    "@storybook/react-vite": "^8.0.0",
+    "@storybook/test": "^8.0.0",
     "@types/node": "^20.11.24",
+    "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
     "@typescript-eslint/eslint-plugin": "^7.1.0",
     "@typescript-eslint/parser": "^7.1.0",
     "eslint": "^8.57.0",
-    "typescript": "^5.3.3"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "storybook": "^8.0.0",
+    "typescript": "^5.3.3",
+    "vite": "^5.1.4"
   },
   "dependencies": {
-    "vega-lite": "^5.12.0",
-    "echarts": "^5.5.0"
+    "@types/plotly.js": "^2.35.6",
+    "echarts": "^5.5.0",
+    "react-plotly.js": "^2.6.0",
+    "vega-embed": "^6.22.1",
+    "vega-lite": "^5.12.0"
   },
   "engines": {
     "node": ">=14.0.0"
