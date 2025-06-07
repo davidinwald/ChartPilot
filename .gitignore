@@ -21,6 +21,7 @@ npm-debug.log*
 # Coverage directory
 coverage/
 playwright-report/
+playwright-report/index.html
 
 # OS files
 .DS_Store
